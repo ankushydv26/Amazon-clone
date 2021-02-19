@@ -50,7 +50,7 @@ const Header = () => {
             <div className="header_basket">
                 <AddShoppingCartIcon className="header_basket_icon"/>
                 <span className="header_option2 header_custom">
-                    {basket?.length}gggg
+                    {basket?.length}
                 </span>
             </div>
           </Link>

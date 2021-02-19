@@ -2,8 +2,11 @@ import React from 'react'
 import Banner from "../asset/image/banner.jpg";
 import "./checkout.css"
 import Subtotal from "../component/Subtotal.js"
+import CheckOutProduct from "./CheckOutProduct"
+import { useStateValue } from '../context/StateProvider';
 
 function Checkout() {
+    const  [{basket}, dispatch] = useStateValue()
     return (
         <>
         <div className="banner-container">
@@ -13,6 +16,7 @@ function Checkout() {
             
             <div className="checkout-list">
                 <h2>Your Shopping Basket</h2>
+                <CheckOutProduct/>
                
 
             </div>

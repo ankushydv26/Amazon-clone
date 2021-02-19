@@ -5,12 +5,12 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import {StateProvider} from "./context/StateProvider";
 import {initialState} from "./context/reducer/Reducer";
-import reducer from "./context/reducer/Reducer"
+import Reducer from "./context/reducer/Reducer"
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-    <App />
+    <StateProvider initialState={initialState} reducer={Reducer}>
+     <App />
     </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
