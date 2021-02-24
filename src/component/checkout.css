@@ -10,7 +10,7 @@
 .checkout{
     display: flex;
     padding: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0px;
     background-color: white;
 }

@@ -10,6 +10,7 @@ import Alexa from "../asset/image/echo.jpg"
 
 const Home = () => {
   
+  
     return (
         <>
         <div  className="home">
@@ -26,14 +27,15 @@ const Home = () => {
                    title="Work From Home Starter Pack" 
                    image={WFH}
                    rating={3}
-                   id="1" 
+                   id="Chair2" 
                    />
                    <Product
                     price={99}
                     title="Up to 50% off on Headphones" 
                     image={Headphone}
                     rating={4} 
-                    id="2" 
+                    id="earphone"
+
                    />
                    {/* Product */}
 
@@ -45,21 +47,23 @@ const Home = () => {
                     title="Up to 30% off | Refurbished speakers" 
                     image={Bluetooth}
                     rating={3} 
-                    id="3"
+                    id="speaker"
+
                   />
                    <Product 
                     price={1129}
                     title="Mi TV 4A PRO 80 cm (32 inches) HD Ready Android LED TV (Black) | With Data Saver" 
                     image={TV}
                     rating={5}
-                    id="4" 
+                    id="TV"
                    />
-                   <Product 
+                   <Product
                     price={299}
                     title="Work From Home Starter Pack" 
                     image={WFH}
                     rating={4}
-                    id="5" 
+                    id="Chair" 
+
                    />
                    
               </div>
@@ -69,11 +73,8 @@ const Home = () => {
                    title="All-new Echo Dot (4th Gen) with clock | Next generation smart speaker with improved bass, LED display and Alexa (Blue)" 
                    image={Alexa}
                    rating={4}
-                   id="6" 
+                   id="Alexa" 
                  />
-                  {/* Product */}
-                  {/* Product */}
-                  {/* Product */}
               </div>
           </div>
         </div>  
