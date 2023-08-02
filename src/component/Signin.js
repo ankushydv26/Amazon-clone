@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import {Link , useHistory} from "react-router-dom"
+import { useAuth } from "./logContext";
 
 
 
@@ -17,15 +18,16 @@ const Signin = (logInfo) => {
   const [password, Setpassword] = useState("");
   const [message, setMessage] = useState("");
   const history = useHistory(); // Get the history object
+  const { isSignIn,setIsSignIn } = useAuth()
   
-
+  console.log("from sign comp" , isSignIn);
 
   const handleEmailSignIn = async (e) => {
     e.preventDefault();
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       history.push('/');
-      logInfo =true
+      setIsSignIn(false)
       console.log('Logged in with email and password');
     } catch (error) {
       console.error('Error signing in:', error , error.message);

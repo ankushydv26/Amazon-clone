@@ -1,30 +1,38 @@
-import React from 'react'
-import {useState} from 'react'
+import React from 'react';
 import "./header.css"
 import SearchIcon from '@material-ui/icons/Search';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import {Link} from "react-router-dom"
 import {useStateValue} from "../context/StateProvider";
-import SignUpForm from './Signup';
-import Signin from './Signin'
+
+import {useAuth} from './logContext'
+
 
 
 
 const Header = () => {
     const [{basket}, dispatch] = useStateValue();
-  let logInfo = false;
+  
+  const {isSignIn,setIsSignIn } = useAuth()
 
 
-  console.log(logInfo)
+  const handleSignOut = () =>{
+    
+    setIsSignIn(true)
+
+  }
+
+
+  console.log( isSignIn)
 
     return (
         <>
-        <div style={{display: 'none'}} >
+        {/* <div style={{display: 'none'}} >
         <SignUpForm logInfo={logInfo} />
         </div>
         <div style={{display: 'none'}} >
         <Signin logInfo={logInfo}/>
-        </div>
+        </div> */}
         <div className="header">
           <h3 className="logo">Ashish</h3>
           <div className="header_search">
@@ -36,7 +44,7 @@ const Header = () => {
               <SearchIcon className="search_icon"/>
           </div>
           <div className="header_nav">
-              {!logInfo ? <> <div className="header_options">
+              {isSignIn ? <> <div className="header_options">
                   <Link className="header_option2" to="/signin" style={{color:'white'}}>
                       Sign In
                   </Link>
@@ -45,7 +53,7 @@ const Header = () => {
                   <Link className="header_option2" to="/Signup" style={{color:'white'}}>
                       Sign Up
                   </Link>
-              </div> </> : <p>Log out</p>}
+              </div> </> : <p onClick={handleSignOut}>Log out</p>}
               <div className="header_options">
                   <span className="header_option1">
                       Returns

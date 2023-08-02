@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import {useHistory} from "react-router-dom";
 
 import firebase from './firebase/Config';
+import { useAuth } from "./logContext";
+
 
 // firebase.initializeApp(firebaseConfig);
 
@@ -8,6 +11,10 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const { setIsSignIn } = useAuth()
+  const history = useHistory(); // Get the history object
+
+
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -15,6 +22,8 @@ const SignUpForm = () => {
     try {
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       setMessage('Sign-up successful! You can now log in.');
+      history.push('/');
+      setIsSignIn(false)
     } catch (error) {
       setMessage('Sign-up failed. ' , error.message);
       

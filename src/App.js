@@ -6,11 +6,14 @@ import {BrowserRouter as Router , Route , Switch} from "react-router-dom";
 import Checkout from "./component/Checkout"
 import Signin from "./component/Signin"
 import SignUpForm from './component/Signup';
+ 
+ import {AuthProvider} from './component/logContext.js'    
 
 
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
     <div className="App">
     <Header/>
@@ -33,6 +36,7 @@ function App() {
       </Switch>
     </div>
     </Router>
+    </AuthProvider>
   );
 }
 
