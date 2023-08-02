@@ -1,14 +1,18 @@
-import firebase  from "firebase/app"
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrywH6b6irwb4FSD4mPkosuXuYC6L8E60",
-    authDomain: "amzon-clone-9ae17.firebaseapp.com",
-    projectId: "amzon-clone-9ae17",
-    storageBucket: "amzon-clone-9ae17.appspot.com",
-    messagingSenderId: "756785430853",
-    appId: "1:756785430853:web:67db7bde21be153e893e2c"
+  apiKey: "AIzaSyCpk7KRYYB2f2H1jf6G-MEHZPDN6n5aBsE",
+  authDomain: "ashish-ecommerce-e7be3.firebaseapp.com",
+  projectId: "ashish-ecommerce-e7be3",
+  storageBucket: "ashish-ecommerce-e7be3.appspot.com",
+  messagingSenderId: "2888260705",
+  appId: "1:2888260705:web:c216e9eec884a382e95e20",
+  measurementId: "G-6GJCH14WNF"
   };
 
-firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
+export default firebase;  
 
-export default firebase;
+

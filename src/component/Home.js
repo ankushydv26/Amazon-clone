@@ -1,4 +1,5 @@
 import React from 'react'
+import {useState} from 'react'
 import Cover from "../asset/image/cover.jpg"
 import "./home.css"
 import Product from "./Product"
@@ -8,11 +9,15 @@ import Bluetooth from "../asset/image/Bt.jpg"
 import TV from "../asset/image/tv.jpg"
 import Alexa from "../asset/image/echo.jpg"
 
+
 const Home = () => {
+
+  
   
   
     return (
         <>
+
         <div  className="home">
           <div className="home-container">
               <img

@@ -1,17 +1,32 @@
 import React from 'react'
+import {useState} from 'react'
 import "./header.css"
 import SearchIcon from '@material-ui/icons/Search';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import {Link} from "react-router-dom"
 import {useStateValue} from "../context/StateProvider";
+import SignUpForm from './Signup';
+import Signin from './Signin'
 
 
 
 const Header = () => {
     const [{basket}, dispatch] = useStateValue();
+  let logInfo = false;
+
+
+  console.log(logInfo)
+
     return (
+        <>
+        <div style={{display: 'none'}} >
+        <SignUpForm logInfo={logInfo} />
+        </div>
+        <div style={{display: 'none'}} >
+        <Signin logInfo={logInfo}/>
+        </div>
         <div className="header">
-          <h3 className="logo">Amazon</h3>
+          <h3 className="logo">Ashish</h3>
           <div className="header_search">
               <input
                className="header_searchInput"
@@ -21,14 +36,16 @@ const Header = () => {
               <SearchIcon className="search_icon"/>
           </div>
           <div className="header_nav">
-              <div className="header_options">
-                  <span className="header_option1">
-                      Hello , user name
-                  </span>
-                  <span className="header_option2">
+              {!logInfo ? <> <div className="header_options">
+                  <Link className="header_option2" to="/signin" style={{color:'white'}}>
                       Sign In
-                  </span>
+                  </Link>
               </div>
+              <div className="header_options">
+                  <Link className="header_option2" to="/Signup" style={{color:'white'}}>
+                      Sign Up
+                  </Link>
+              </div> </> : <p>Log out</p>}
               <div className="header_options">
                   <span className="header_option1">
                       Returns
@@ -55,6 +72,7 @@ const Header = () => {
             </div>
           </Link>
         </div>
+        </>
     )
 }
 

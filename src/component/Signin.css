@@ -1,0 +1,18 @@
+.box-main {
+    display: block;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+    width: 450px;
+}
+
+
+.button-input{
+    margin-top: 10px;
+    background-color: #cd9042;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    width: 100%;
+}
