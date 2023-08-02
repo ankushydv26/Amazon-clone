@@ -34,7 +34,7 @@ const Header = () => {
         <Signin logInfo={logInfo}/>
         </div> */}
         <div className="header">
-          <h3 className="logo">Ashish</h3>
+          <h3 className="logo"><Link to='/' style={{color:'white', textDecoration:'none'}}> Ashish E-commerce</Link></h3>
           <div className="header_search">
               <input
                className="header_searchInput"
@@ -53,7 +53,7 @@ const Header = () => {
                   <Link className="header_option2" to="/Signup" style={{color:'white'}}>
                       Sign Up
                   </Link>
-              </div> </> : <p onClick={handleSignOut}>Log out</p>}
+              </div> </> : <p onClick={handleSignOut}  style={{cursor: 'pointer'}}>Log out</p>}
               <div className="header_options">
                   <span className="header_option1">
                       Returns

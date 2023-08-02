@@ -1,5 +1,4 @@
 import React from 'react'
-import {useState} from 'react'
 import Cover from "../asset/image/cover.jpg"
 import "./home.css"
 import Product from "./Product"
